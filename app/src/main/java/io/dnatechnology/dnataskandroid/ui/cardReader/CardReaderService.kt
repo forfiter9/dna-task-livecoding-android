@@ -4,6 +4,12 @@ import kotlinx.coroutines.delay
 import java.util.*
 import java.util.Calendar.SECOND
 
+/**
+ * This is a mock implementation.
+ * For the purposes of this task we simply pretend there is a service we are using.
+ *
+ * To simulate errors, service throws `CardReaderException` in the second half of any minute.
+ */
 class CardReaderService {
 
     suspend fun readCard(): CardData {

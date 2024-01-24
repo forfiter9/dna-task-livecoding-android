@@ -4,6 +4,13 @@ import io.dnatechnology.dnataskandroid.ui.api.data.*
 import kotlinx.coroutines.delay
 import java.util.*
 
+/**
+ * This is a mock implementation.
+ * For the purposes of this task we simply pretend there is an API we are using.
+ *
+ * Not to complicate things too much we've added condition that the purchase confirmation will fail
+ * when total sum of purchase exceeds 100.00.
+ */
 class PurchaseApiClient {
     companion object {
         val productList = listOf(
