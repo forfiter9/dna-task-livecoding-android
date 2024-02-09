@@ -1,0 +1,27 @@
+ext {
+    versions = [
+            compose         : "1.4.0",
+            compose_activity: "1.7.2",
+            ktx             : "1.10.1",
+            lifecycle       : "2.6.1",
+
+            espresso        : "3.5.1",
+            junit           : "4.13.2",
+            junit_ext       : "1.1.5",
+    ]
+}
+
+def versionMajor = 1
+def versionMinor = 0
+def versionPatch = 0
+def versionBuild = 0
+
+project.ext.compileSdk = 33
+project.ext.minSdk = 21
+project.ext.targetSdk = 33
+project.ext.composeVersion = "1.4.0"
+
+project.ext.versionCode = versionMajor * 100000 + versionMinor * 1000 + versionPatch * 100 + versionBuild
+project.ext.versionName = "${versionMajor}.${versionMinor}.${versionPatch}"
+
+project.ext.applicationId = "io.dnatechnology.dnataskandroid"
