@@ -2,25 +2,32 @@ package io.dnatechnology.dnataskandroid.productscard.presentation
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import dagger.hilt.android.lifecycle.HiltViewModel
 import io.dnatechnology.dnataskandroid.productscard.data.source.remote.api.Product
 import io.dnatechnology.dnataskandroid.productscard.data.source.remote.api.PurchaseApiClient
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class ProductsViewModel: ViewModel() {
+@HiltViewModel
+class ProductsCardViewModel @Inject constructor(
+
+): ViewModel() {
 
     val purchaseApiClient: PurchaseApiClient = PurchaseApiClient()
 
     private var mutableCart = MutableStateFlow<Map<String, Long>>(mapOf())
     var cart: StateFlow<Map<String, Long>> = mutableCart
 
-    private var mutableProducts = MutableStateFlow<List<Product>?>(null)
-    var products: StateFlow<List<Product>?> = mutableProducts
+    private var _productCardUiState = MutableStateFlow<ProductCardUiState>(ProductCardUiState.EMPTY)
+    var productCardUiState: StateFlow<ProductCardUiState> = _productCardUiState
 
     fun getProducts() {
         viewModelScope.launch {
-            mutableProducts.value = purchaseApiClient.getProducts()
+            _productCardUiState.value = _productCardUiState.value.copy(
+                products = purchaseApiClient.getProducts()
+            )
         }
     }
 

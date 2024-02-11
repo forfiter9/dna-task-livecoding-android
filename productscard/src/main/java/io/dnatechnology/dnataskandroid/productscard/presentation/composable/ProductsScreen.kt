@@ -16,27 +16,30 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.hilt.navigation.compose.hiltViewModel
 import io.dnatechnology.dnataskandroid.core.design.theme.Black
 import io.dnatechnology.dnataskandroid.core.design.theme.White
 import io.dnatechnology.dnataskandroid.productscard.R
-import io.dnatechnology.dnataskandroid.productscard.presentation.ProductsViewModel
+import io.dnatechnology.dnataskandroid.productscard.presentation.ProductsCardViewModel
 
 
 @Composable
-fun ProductsView(productsViewModel: ProductsViewModel) {
+fun ProductsView(
+    productsCardViewModel: ProductsCardViewModel = hiltViewModel()
+) {
     LaunchedEffect(Unit) {
-        productsViewModel.getProducts()
+        productsCardViewModel.getProducts()
     }
-    val products = productsViewModel.products.collectAsState().value
+    val productsCardUiState = productsCardViewModel.productCardUiState.collectAsState().value
     Column(
         modifier = Modifier.fillMaxSize(),
         verticalArrangement = Arrangement.SpaceBetween,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        if (products != null) {
+        if (productsCardUiState.products != null) {
             ProductsListContent(
-                products = products,
-                productsViewModel = productsViewModel
+                products = productsCardUiState.products,
+                productsCardViewModel = productsCardViewModel
             )
         } else {
             Text(text = stringResource(R.string.loading))
@@ -58,5 +61,5 @@ fun ProductsView(productsViewModel: ProductsViewModel) {
 @Preview(showBackground = true)
 @Composable
 fun DefaultPreview() {
-    ProductsView(productsViewModel = ProductsViewModel())
+    ProductsView(productsCardViewModel = ProductsCardViewModel())
 }

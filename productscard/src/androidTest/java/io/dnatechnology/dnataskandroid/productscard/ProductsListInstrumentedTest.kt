@@ -6,7 +6,8 @@ import androidx.compose.ui.test.hasText
 import androidx.compose.ui.test.junit4.createComposeRule
 import androidx.compose.ui.test.onNodeWithTag
 import androidx.test.ext.junit.runners.AndroidJUnit4
-import io.dnatechnology.dnataskandroid.productscard.presentation.ProductsViewModel
+import io.dnatechnology.dnataskandroid.core.design.theme.DNATaskAndroidTheme
+import io.dnatechnology.dnataskandroid.productscard.presentation.ProductsCardViewModel
 import io.dnatechnology.dnataskandroid.productscard.presentation.composable.ProductsView
 import org.junit.Assert.*
 import org.junit.Rule
@@ -21,8 +22,8 @@ class ProductsListInstrumentedTest {
     @Test
     fun loadingTextIsVisibleOnStart() {
         composeTestRule.setContent {
-            io.dnatechnology.dnataskandroid.core.design.theme.DNATaskAndroidTheme {
-                ProductsView(productsViewModel = ProductsViewModel())
+            DNATaskAndroidTheme {
+                ProductsView(productsCardViewModel = ProductsCardViewModel())
             }
         }
 
@@ -33,8 +34,8 @@ class ProductsListInstrumentedTest {
     @Test
     fun productListIsVisibleAfterDownload() {
         composeTestRule.setContent {
-            io.dnatechnology.dnataskandroid.core.design.theme.DNATaskAndroidTheme {
-                ProductsView(productsViewModel = ProductsViewModel())
+            DNATaskAndroidTheme {
+                ProductsView(productsCardViewModel = ProductsCardViewModel())
             }
         }
 

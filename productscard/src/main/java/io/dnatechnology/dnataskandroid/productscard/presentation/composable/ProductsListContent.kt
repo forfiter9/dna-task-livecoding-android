@@ -9,12 +9,12 @@ import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
 import io.dnatechnology.dnataskandroid.productscard.R
 import io.dnatechnology.dnataskandroid.productscard.data.source.remote.api.Product
-import io.dnatechnology.dnataskandroid.productscard.presentation.ProductsViewModel
+import io.dnatechnology.dnataskandroid.productscard.presentation.ProductsCardViewModel
 
 @Composable
 fun ProductsListContent(
     products: List<Product>,
-    productsViewModel: ProductsViewModel
+    productsCardViewModel: ProductsCardViewModel
 ) {
     Column(
         verticalArrangement = Arrangement.spacedBy(dimensionResource(id = R.dimen.product_list_content_vertical_space)),
@@ -22,7 +22,7 @@ fun ProductsListContent(
     )
     {
         for (product in products) {
-            ProductItem(product = product, productsViewModel = productsViewModel)
+            ProductItem(product = product, productsCardViewModel = productsCardViewModel)
         }
     }
 }

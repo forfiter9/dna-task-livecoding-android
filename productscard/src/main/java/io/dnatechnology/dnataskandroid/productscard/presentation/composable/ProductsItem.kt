@@ -15,12 +15,12 @@ import io.dnatechnology.dnataskandroid.core.design.theme.Typography
 import io.dnatechnology.dnataskandroid.core.design.theme.White
 import io.dnatechnology.dnataskandroid.productscard.R
 import io.dnatechnology.dnataskandroid.productscard.data.source.remote.api.Product
-import io.dnatechnology.dnataskandroid.productscard.presentation.ProductsViewModel
+import io.dnatechnology.dnataskandroid.productscard.presentation.ProductsCardViewModel
 
 @Composable
 fun ProductItem(
     product: Product,
-    productsViewModel: ProductsViewModel
+    productsCardViewModel: ProductsCardViewModel
 ){
     Row(
         modifier = Modifier
@@ -30,7 +30,7 @@ fun ProductItem(
             .background(White)
             .border(dimensionResource(R.dimen.product_item_border), Black)
             .clickable {
-                productsViewModel.addToCart(product.productID)
+                productsCardViewModel.addToCart(product.productID)
             }
     ) {
         Text(
