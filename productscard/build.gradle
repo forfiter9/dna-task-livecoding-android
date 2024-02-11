@@ -1,22 +1,17 @@
 plugins {
-    id 'com.android.application'
+    id 'com.android.library'
     id 'org.jetbrains.kotlin.android'
 }
 
 android {
+    namespace 'io.dnatechnology.dnataskandroid.productscard'
     compileSdk project.compileSdk
 
     defaultConfig {
-        applicationId project.applicationId
         minSdk project.minSdk
-        targetSdk project.targetSdk
-        versionCode project.versionCode
-        versionName project.versionName
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-        vectorDrawables {
-            useSupportLibrary true
-        }
+        consumerProguardFiles "consumer-rules.pro"
     }
 
     buildTypes {
@@ -48,9 +43,9 @@ android {
 
 dependencies {
     implementation(project(":core"))
-    implementation(project(":productscard"))
 
     implementation "androidx.appcompat:appcompat:${versions.app_compat}"
+
     constraints {
         implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.8.0") {
             because("kotlin-stdlib-jdk7 is now a part of kotlin-stdlib")
@@ -60,13 +55,13 @@ dependencies {
         }
     }
 
-
     implementation "androidx.core:core-ktx:${versions.ktx}"
     implementation "androidx.compose.ui:ui:${versions.compose}"
     implementation "androidx.compose.material:material:${versions.compose}"
     implementation "androidx.compose.ui:ui-tooling-preview:${versions.compose}"
     implementation "androidx.lifecycle:lifecycle-runtime-ktx:${versions.lifecycle}"
     implementation "androidx.activity:activity-compose:${versions.compose_activity}"
+    implementation "androidx.compose.material3:material3:${versions.material3}"
 
     testImplementation "junit:junit:${versions.junit}"
 

@@ -47,3 +47,8 @@ google-services.json
 .externalNativeBuild
 .cxx
 .idea
+
+.idea/uiDesigner.xml
+.idea/misc.xml
+.idea/gradle.xml
+.idea/compiler.xml
