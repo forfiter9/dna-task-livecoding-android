@@ -13,10 +13,11 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.dp
-import io.dnatechnology.dnataskandroid.core.design.theme.*
+import io.dnatechnology.dnataskandroid.core.design.theme.Black
+import io.dnatechnology.dnataskandroid.core.design.theme.White
 import io.dnatechnology.dnataskandroid.productscard.R
 import io.dnatechnology.dnataskandroid.productscard.presentation.ProductsViewModel
 
@@ -45,7 +46,7 @@ fun ProductsView(productsViewModel: ProductsViewModel) {
             Modifier
                 .background(White)
                 .fillMaxWidth()
-                .height(50.dp),
+                .height(dimensionResource(id = R.dimen.pay_button_height)),
             horizontalArrangement = Arrangement.Center,
             verticalAlignment = Alignment.CenterVertically
         ) {
