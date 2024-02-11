@@ -1,6 +1,8 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
+    id 'com.google.dagger.hilt.android'
 }
 
 android {
@@ -60,13 +62,15 @@ dependencies {
         }
     }
 
-
     implementation "androidx.core:core-ktx:${versions.ktx}"
     implementation "androidx.compose.ui:ui:${versions.compose}"
     implementation "androidx.compose.material:material:${versions.compose}"
     implementation "androidx.compose.ui:ui-tooling-preview:${versions.compose}"
     implementation "androidx.lifecycle:lifecycle-runtime-ktx:${versions.lifecycle}"
     implementation "androidx.activity:activity-compose:${versions.compose_activity}"
+
+    implementation "com.google.dagger:hilt-android:${versions.hilt}"
+    kapt "com.google.dagger:hilt-compiler:${versions.hilt}"
 
     testImplementation "junit:junit:${versions.junit}"
 

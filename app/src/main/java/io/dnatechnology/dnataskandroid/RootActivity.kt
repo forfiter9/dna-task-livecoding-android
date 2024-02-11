@@ -1,4 +1,4 @@
-package io.dnatechnology.dnataskandroid.ui
+package io.dnatechnology.dnataskandroid
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity

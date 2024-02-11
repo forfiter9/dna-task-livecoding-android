@@ -59,5 +59,4 @@ fun ProductsView(productsViewModel: ProductsViewModel) {
 @Composable
 fun DefaultPreview() {
     ProductsView(productsViewModel = ProductsViewModel())
-
 }
