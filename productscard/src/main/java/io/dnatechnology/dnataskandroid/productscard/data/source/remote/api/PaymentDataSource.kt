@@ -14,7 +14,7 @@ import kotlinx.coroutines.delay
  * 2. Executing payments with amount < 20.00 will fail
  * 3. Reverting payment with amount < 1.00 will fail
  */
-class PaymentApiClient {
+class PaymentDataSource {
     /**
      * Call this method to execute payment on the account connected with provided card token
      */

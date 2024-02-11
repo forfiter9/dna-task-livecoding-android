@@ -8,6 +8,8 @@ import io.dnatechnology.dnataskandroid.productscard.data.source.remote.api.data.
 import io.dnatechnology.dnataskandroid.productscard.data.source.remote.api.data.TransactionStatus
 import kotlinx.coroutines.delay
 import java.util.*
+import javax.inject.Inject
+import javax.inject.Singleton
 
 /**
  * This is a mock implementation.
@@ -16,7 +18,10 @@ import java.util.*
  * Not to complicate things too much we've added condition that the purchase confirmation will fail
  * when total sum of purchase exceeds 100.00.
  */
-class PurchaseApiClient {
+@Singleton
+class PurchaseDataSource @Inject constructor(
+    // place for real service to inject
+) {
     companion object {
         val productList = listOf(
             Product("12345", "Big soda",123, 2.99, "EUR", 0.22),

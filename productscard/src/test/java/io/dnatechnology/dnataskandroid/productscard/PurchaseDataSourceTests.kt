@@ -1,19 +1,19 @@
 package io.dnatechnology.dnataskandroid.productscard
 
-import io.dnatechnology.dnataskandroid.productscard.data.source.remote.api.PaymentApiClient
+import io.dnatechnology.dnataskandroid.productscard.data.source.remote.api.PaymentDataSource
+import io.dnatechnology.dnataskandroid.productscard.data.source.remote.api.PurchaseDataSource
 import io.dnatechnology.dnataskandroid.productscard.data.source.remote.api.data.PaymentRequest
 import io.dnatechnology.dnataskandroid.productscard.data.source.remote.api.data.PaymentStatus
 import io.dnatechnology.dnataskandroid.productscard.data.source.remote.api.data.PurchaseConfirmRequest
 import io.dnatechnology.dnataskandroid.productscard.data.source.remote.api.data.PurchaseRequest
 import io.dnatechnology.dnataskandroid.productscard.data.source.remote.api.data.TransactionStatus
-import io.dnatechnology.dnataskandroid.productscard.data.source.remote.api.PurchaseApiClient
 import kotlinx.coroutines.runBlocking
 import org.junit.Assert.assertEquals
 import org.junit.Test
 
 class PaymentAPITests {
     private val paymentAPI =
-        PaymentApiClient()
+        PaymentDataSource()
 
     @Test
     fun whenCorrectDataThenSuccess() = runBlocking {
@@ -108,7 +108,7 @@ class PaymentAPITests {
 
 class PurchaseAPITests {
     private val purchaseApiClient =
-        PurchaseApiClient()
+        PurchaseDataSource() // TODO mock it with mockk
 
     @Test
     fun whenGetProductsThenSuccess() = runBlocking {

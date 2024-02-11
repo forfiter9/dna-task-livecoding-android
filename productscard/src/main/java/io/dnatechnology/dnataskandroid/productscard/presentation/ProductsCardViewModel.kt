@@ -3,8 +3,7 @@ package io.dnatechnology.dnataskandroid.productscard.presentation
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
-import io.dnatechnology.dnataskandroid.productscard.data.source.remote.api.Product
-import io.dnatechnology.dnataskandroid.productscard.data.source.remote.api.PurchaseApiClient
+import io.dnatechnology.dnataskandroid.productscard.domain.usecase.GetProductsUseCase
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
@@ -12,10 +11,8 @@ import javax.inject.Inject
 
 @HiltViewModel
 class ProductsCardViewModel @Inject constructor(
-
+    private val getProductsUseCase: GetProductsUseCase
 ): ViewModel() {
-
-    val purchaseApiClient: PurchaseApiClient = PurchaseApiClient()
 
     private var mutableCart = MutableStateFlow<Map<String, Long>>(mapOf())
     var cart: StateFlow<Map<String, Long>> = mutableCart
@@ -26,7 +23,7 @@ class ProductsCardViewModel @Inject constructor(
     fun getProducts() {
         viewModelScope.launch {
             _productCardUiState.value = _productCardUiState.value.copy(
-                products = purchaseApiClient.getProducts()
+                products = getProductsUseCase.invoke()
             )
         }
     }

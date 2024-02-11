@@ -61,5 +61,5 @@ fun ProductsView(
 @Preview(showBackground = true)
 @Composable
 fun DefaultPreview() {
-    ProductsView(productsCardViewModel = ProductsCardViewModel())
+    ProductsView()
 }
