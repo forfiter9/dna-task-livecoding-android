@@ -4,6 +4,8 @@ import io.dnatechnology.dnataskandroid.productscard.data.source.remote.api.data.
 import io.dnatechnology.dnataskandroid.productscard.data.source.remote.api.data.PaymentResponse
 import io.dnatechnology.dnataskandroid.productscard.data.source.remote.api.data.PaymentStatus
 import kotlinx.coroutines.delay
+import javax.inject.Inject
+import javax.inject.Singleton
 
 /**
  * This is a mock implementation.
@@ -14,7 +16,8 @@ import kotlinx.coroutines.delay
  * 2. Executing payments with amount < 20.00 will fail
  * 3. Reverting payment with amount < 1.00 will fail
  */
-class PaymentDataSource {
+@Singleton
+class PaymentDataSource @Inject constructor() {
     /**
      * Call this method to execute payment on the account connected with provided card token
      */

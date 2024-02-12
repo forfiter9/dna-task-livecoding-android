@@ -70,6 +70,9 @@ dependencies {
     kapt "com.google.dagger:hilt-compiler:${versions.hilt}"
 
     testImplementation "junit:junit:${versions.junit}"
+    testImplementation "io.mockk:mockk:${versions.mockk}"
+    testImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:${versions.coroutines}"
+    testImplementation "io.kotest:kotest-assertions-core:${versions.kotest}"
 
     androidTestImplementation "androidx.test.ext:junit-ktx:${versions.junit_ext}"
     androidTestImplementation "androidx.test.espresso:espresso-core:${versions.espresso}"

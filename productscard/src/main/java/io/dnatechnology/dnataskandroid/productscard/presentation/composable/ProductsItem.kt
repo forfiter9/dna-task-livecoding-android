@@ -30,7 +30,7 @@ fun ProductItem(
             .background(White)
             .border(dimensionResource(R.dimen.product_item_border), Black)
             .clickable {
-                productsCardViewModel.addToCart(product.productID)
+                productsCardViewModel.addToCart(product)
             }
     ) {
         Text(

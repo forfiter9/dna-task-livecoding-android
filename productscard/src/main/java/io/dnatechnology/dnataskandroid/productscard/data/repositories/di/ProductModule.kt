@@ -13,7 +13,7 @@ import javax.inject.Singleton
 abstract class ProductModule {
     @Binds
     @Singleton
-    internal abstract fun bindPostRepository(
+    internal abstract fun bindProductRepository(
         productRepositoryImpl: ProductRepositoryImpl
     ): ProductRepository
 }

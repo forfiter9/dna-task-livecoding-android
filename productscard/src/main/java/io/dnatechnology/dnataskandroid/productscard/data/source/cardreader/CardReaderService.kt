@@ -3,6 +3,8 @@ package io.dnatechnology.dnataskandroid.productscard.data.source.cardreader
 import kotlinx.coroutines.delay
 import java.util.*
 import java.util.Calendar.SECOND
+import javax.inject.Inject
+import javax.inject.Singleton
 
 /**
  * This is a mock implementation.
@@ -10,7 +12,8 @@ import java.util.Calendar.SECOND
  *
  * To simulate errors, service throws `CardReaderException` in the second half of any minute.
  */
-class CardReaderService {
+@Singleton
+class CardReaderService @Inject constructor() {
 
     suspend fun readCard(): CardData {
         val second = Calendar.getInstance().get(SECOND)
