@@ -7,6 +7,7 @@ import io.dnatechnology.dnataskandroid.productscard.data.source.remote.api.Purch
 import io.dnatechnology.dnataskandroid.productscard.data.source.remote.api.data.PaymentRequest
 import io.dnatechnology.dnataskandroid.productscard.data.source.remote.api.data.PurchaseRequest
 import io.dnatechnology.dnataskandroid.productscard.data.source.remote.api.data.PurchaseResponse
+import io.dnatechnology.dnataskandroid.productscard.domain.repositories.PaymentRepository
 import javax.inject.Inject
 
 class PaymentRepositoryImpl @Inject constructor(

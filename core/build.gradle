@@ -10,7 +10,7 @@ android {
     defaultConfig {
         minSdk project.minSdk
 
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "io.dnatechnology.dnataskandroid.productscard.CustomTestRunner"
         consumerProguardFiles "consumer-rules.pro"
     }
 

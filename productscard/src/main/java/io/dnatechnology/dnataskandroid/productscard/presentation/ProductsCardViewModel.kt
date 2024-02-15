@@ -56,12 +56,19 @@ class ProductsCardViewModel @Inject constructor(
             _productCardUiState.value = _productCardUiState.value.copy(
                 paymentStatus = PaymentStatus.IsProcessing,
             )
-            val cardData = async { getCardDataUseCase.invoke() }.await()
-            val transactionData =
-                async { initiateTransactionUseCase.invoke(basketProducts.toList()) }.await()
+            val cardData = getCardDataUseCase.invoke()
+
             val paymentStatus = if (cardData.readStatus == CardStatus.SUCCESS) {
+                val transactionData =
+                    async { initiateTransactionUseCase.invoke(basketProducts.toList()) }
+                
                 val paymentResult =
-                    paymentUseCase.invoke(transactionData, cardData, basketProducts.first().product.unitValueCurrency, totalPrice)
+                    paymentUseCase.invoke(
+                        transactionData.await(),
+                        cardData,
+                        basketProducts.first().product.unitValueCurrency,
+                        totalPrice
+                    )
                 if (paymentResult.status == Status.SUCCESS) {
                     PaymentStatus.PaymentSuccess
                 } else {

@@ -12,7 +12,7 @@ android {
     defaultConfig {
         minSdk project.minSdk
 
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "io.dnatechnology.dnataskandroid.productscard.CustomTestRunner"
         consumerProguardFiles "consumer-rules.pro"
     }
 
@@ -77,6 +77,8 @@ dependencies {
     androidTestImplementation "androidx.test.ext:junit-ktx:${versions.junit_ext}"
     androidTestImplementation "androidx.test.espresso:espresso-core:${versions.espresso}"
     androidTestImplementation "androidx.compose.ui:ui-test-junit4:${versions.compose}"
+    androidTestImplementation "com.google.dagger:hilt-android-testing:${versions.hilt}"
+    kaptAndroidTest "com.google.dagger:hilt-android-compiler:${versions.hilt}"
 
     debugImplementation "androidx.compose.ui:ui-tooling: ${versions.compose}"
     debugImplementation "androidx.compose.ui:ui-test-manifest:${versions.compose}"

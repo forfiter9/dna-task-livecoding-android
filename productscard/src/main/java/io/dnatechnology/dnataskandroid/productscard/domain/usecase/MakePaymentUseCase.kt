@@ -1,10 +1,10 @@
 package io.dnatechnology.dnataskandroid.productscard.domain.usecase
 
-import io.dnatechnology.dnataskandroid.productscard.data.repositories.PaymentRepository
+import io.dnatechnology.dnataskandroid.productscard.domain.repositories.PaymentRepository
 import io.dnatechnology.dnataskandroid.productscard.domain.model.CardData
 import io.dnatechnology.dnataskandroid.productscard.domain.model.PaymentResults
 import io.dnatechnology.dnataskandroid.productscard.domain.model.TransactionData
-import io.dnatechnology.dnataskandroid.productscard.domain.usecase.converters.toDomainPaymentStatus
+import io.dnatechnology.dnataskandroid.productscard.data.converters.toDomainPaymentStatus
 import javax.inject.Inject
 import javax.inject.Singleton
 

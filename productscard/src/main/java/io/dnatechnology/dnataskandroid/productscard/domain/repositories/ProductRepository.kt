@@ -1,4 +1,4 @@
-package io.dnatechnology.dnataskandroid.productscard.data.repositories
+package io.dnatechnology.dnataskandroid.productscard.domain.repositories
 
 import io.dnatechnology.dnataskandroid.productscard.data.source.remote.api.Product
 

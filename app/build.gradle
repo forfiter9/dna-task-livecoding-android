@@ -15,7 +15,7 @@ android {
         versionCode project.versionCode
         versionName project.versionName
 
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "io.dnatechnology.dnataskandroid.productscard.CustomTestRunner"
         vectorDrawables {
             useSupportLibrary true
         }
@@ -53,6 +53,7 @@ dependencies {
     implementation(project(":productscard"))
 
     implementation "androidx.appcompat:appcompat:${versions.app_compat}"
+    implementation 'androidx.test:runner:1.5.2'
     constraints {
         implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.8.0") {
             because("kotlin-stdlib-jdk7 is now a part of kotlin-stdlib")
@@ -78,6 +79,8 @@ dependencies {
     androidTestImplementation "androidx.test.ext:junit-ktx:${versions.junit_ext}"
     androidTestImplementation "androidx.test.espresso:espresso-core:${versions.espresso}"
     androidTestImplementation "androidx.compose.ui:ui-test-junit4:${versions.compose}"
+    androidTestImplementation "com.google.dagger:hilt-android-testing:${versions.hilt}"
+    kaptAndroidTest "com.google.dagger:hilt-android-compiler:${versions.hilt}"
 
     debugImplementation "androidx.compose.ui:ui-tooling: ${versions.compose}"
     debugImplementation "androidx.compose.ui:ui-test-manifest:${versions.compose}"

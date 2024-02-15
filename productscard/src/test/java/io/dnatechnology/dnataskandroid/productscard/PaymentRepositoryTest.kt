@@ -1,6 +1,6 @@
 package io.dnatechnology.dnataskandroid.productscard
 
-import io.dnatechnology.dnataskandroid.productscard.data.repositories.PaymentRepository
+import io.dnatechnology.dnataskandroid.productscard.domain.repositories.PaymentRepository
 import io.dnatechnology.dnataskandroid.productscard.data.source.cardreader.CardReaderException
 import io.dnatechnology.dnataskandroid.productscard.domain.model.CardData
 import io.dnatechnology.dnataskandroid.productscard.domain.model.CardStatus

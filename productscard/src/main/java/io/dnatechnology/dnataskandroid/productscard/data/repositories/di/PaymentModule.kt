@@ -4,7 +4,7 @@ import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
-import io.dnatechnology.dnataskandroid.productscard.data.repositories.PaymentRepository
+import io.dnatechnology.dnataskandroid.productscard.domain.repositories.PaymentRepository
 import io.dnatechnology.dnataskandroid.productscard.data.repositories.PaymentRepositoryImpl
 import javax.inject.Singleton
 
